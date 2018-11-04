@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Collision.h"
+#include "MainGame.h"
 
 #define MAX_LOADSTRING 100
 
@@ -41,6 +42,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
     msg.message = WM_NULL;
+    CMainGame mainGame;
+    mainGame.Initialize();
     // 기본 메시지 루프입니다.
     while (msg.message != WM_QUIT)
     {
@@ -51,6 +54,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
+            mainGame.Update();
+            mainGame.LateUpdate();
+            mainGame.Release();
 
         }
     }
