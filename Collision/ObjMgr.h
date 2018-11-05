@@ -10,6 +10,9 @@ private:
     ~CObjMgr();
 
 public:
+    enum OBJ_ID { PLAYER, BLOCK, OBJ_ID_END};
+
+public:
     void Initialize();
     void LateInit();
     void Update();
@@ -18,6 +21,6 @@ public:
     void Release();
 
 private:
-    list<CObj*> m_lstObj;
+    list<CObj*> m_lstObj[OBJ_ID_END];
 };
 

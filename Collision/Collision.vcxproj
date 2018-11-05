@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Extern.h" />
     <ClInclude Include="Function.h" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Movable.cpp" />
     <ClCompile Include="Obj.cpp" />

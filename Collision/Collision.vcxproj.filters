@@ -25,6 +25,9 @@
     <Filter Include="02.Mgr\00.ObjMgr">
       <UniqueIdentifier>{8dcb1389-9747-44b5-bab8-51cbdc836b02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Mgr\01.CollisionMgr">
+      <UniqueIdentifier>{076f49a9-a682-456c-bfc9-d3b9c5423422}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collision.h">
@@ -66,6 +69,9 @@
     <ClInclude Include="Function.h">
       <Filter>98.Header</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>02.Mgr\01.CollisionMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Collision.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>02.Mgr\00.ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>02.Mgr\01.CollisionMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

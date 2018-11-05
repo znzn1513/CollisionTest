@@ -31,3 +31,4 @@ using namespace std;
 
 //юлго mgr
 #include "ObjMgr.h"
+#include "CollisionMgr.h"

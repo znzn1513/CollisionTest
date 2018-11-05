@@ -26,7 +26,7 @@ void CObjMgr::Initialize()
         CObj* pObj = new CBlock;
         pObj->Initialize();
         pObj->SetPos(i*BLOCK_CX + BLOCK_CX*0.5f, BLOCK_CY*0.5f);
-        m_lstObj.push_back(pObj);
+        m_lstObj[BLOCK].push_back(pObj);
     }
 
     for (int i = 1; iNumTileY > i; ++i)
@@ -34,7 +34,7 @@ void CObjMgr::Initialize()
         CObj* pObj = new CBlock;
         pObj->Initialize();
         pObj->SetPos(BLOCK_CX*0.5f, i*BLOCK_CY + BLOCK_CY*0.5f);
-        m_lstObj.push_back(pObj);
+        m_lstObj[BLOCK].push_back(pObj);
     }
 
     for (int i = 1; iNumTileY > i; ++i)
@@ -42,7 +42,7 @@ void CObjMgr::Initialize()
         CObj* pObj = new CBlock;
         pObj->Initialize();
         pObj->SetPos((iNumTileX-1)*BLOCK_CX + BLOCK_CX*0.5f, i*BLOCK_CY + BLOCK_CY*0.5f);
-        m_lstObj.push_back(pObj);
+        m_lstObj[BLOCK].push_back(pObj);
     }
 
     for (int i = 1; iNumTileX - 1 > i; ++i)
@@ -50,11 +50,11 @@ void CObjMgr::Initialize()
         CObj* pObj = new CBlock;
         pObj->Initialize();
         pObj->SetPos(i*BLOCK_CX + BLOCK_CX*0.5f, (iNumTileY - 1)*BLOCK_CY + BLOCK_CY*0.5f);
-        m_lstObj.push_back(pObj);
+        m_lstObj[BLOCK].push_back(pObj);
     }
     CObj* pObj = new CMovable;
     pObj->Initialize();
-    m_lstObj.push_back(pObj);    
+    m_lstObj[PLAYER].push_back(pObj);
 }
 
 void CObjMgr::LateInit()
@@ -63,23 +63,29 @@ void CObjMgr::LateInit()
 
 void CObjMgr::Update()
 {
-    for (auto& pObj : m_lstObj)
-        pObj->Update();
+    for (int i = 0; i < OBJ_ID_END; ++i)
+        for (auto& pObj : m_lstObj[i])
+            pObj->Update();
 }
 
 void CObjMgr::LateUpdate()
 {
-    for (auto& pObj : m_lstObj)
-        pObj->LateUpdate();
+    for (int i = 0; i < OBJ_ID_END; ++i)
+        for (auto& pObj : m_lstObj[i])
+            pObj->LateUpdate();
+
+    CCollisionMgr::BasicCollision(m_lstObj[BLOCK], m_lstObj[PLAYER].front());
 }
 
 void CObjMgr::Render(HDC hDC)
 {
-    for (auto& pObj : m_lstObj)
-        pObj->Render(hDC);
+    for (int i = 0; i < OBJ_ID_END; ++i)
+        for (auto& pObj : m_lstObj[i])
+            pObj->Render(hDC);
 }
 
 void CObjMgr::Release()
 {
-    for_each(m_lstObj.begin(), m_lstObj.end(), SafeDelete<CObj*>);
+    for(int i=0; i<OBJ_ID_END ; ++i)
+        for_each(m_lstObj[i].begin(), m_lstObj[i].end(), SafeDelete<CObj*>);
 }
