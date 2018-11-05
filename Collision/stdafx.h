@@ -22,3 +22,4 @@
 
 #include "Define.h"
 #include "Extern.h"
+#include "Struct.h"

@@ -14,6 +14,11 @@ public:
     virtual void Release()PURE;
 
 protected:
+    void UpdateRect();
+
+protected:
     bool m_bIsInit;
+    INFO m_tInfo;
+    RECT m_tRect;
 };
 
