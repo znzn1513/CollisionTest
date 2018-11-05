@@ -14,6 +14,11 @@ CObj::~CObj()
 {
 }
 
+void CObj::SetPos(const float fX,const float fY)
+{
+    m_tInfo.fX = fX; m_tInfo.fY = fY;
+}
+
 void CObj::LateInit()
 {
     if (!m_bIsInit)

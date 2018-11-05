@@ -16,10 +16,18 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <list>
+#include <algorithm>
 
+using namespace std;
 
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.
 
 #include "Define.h"
 #include "Extern.h"
 #include "Struct.h"
+#include "Function.h"
+
+
+//이하 mgr
+#include "ObjMgr.h"

@@ -6,6 +6,9 @@ public:
     virtual ~CObj();
 
 public:
+    void SetPos(const float fX, const float fY);
+
+public:
     virtual void Initialize()PURE;
     virtual void LateInit();
     virtual int Update()PURE;
@@ -15,7 +18,6 @@ public:
 
 protected:
     void UpdateRect();
-
 protected:
     bool m_bIsInit;
     INFO m_tInfo;

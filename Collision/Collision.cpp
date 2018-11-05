@@ -44,6 +44,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     msg.message = WM_NULL;
     CMainGame mainGame;
     mainGame.Initialize();
+
+    DWORD dwDelayTime = GetTickCount();
+
     // 기본 메시지 루프입니다.
     while (msg.message != WM_QUIT)
     {
@@ -54,9 +57,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            mainGame.Update();
-            mainGame.LateUpdate();
-            mainGame.Release();
+            if (dwDelayTime + 30 < GetTickCount())
+            {
+                mainGame.Update();
+                mainGame.LateUpdate();
+                mainGame.Render();
+
+                dwDelayTime = GetTickCount();
+            }
 
         }
     }

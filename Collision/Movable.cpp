@@ -2,17 +2,17 @@
 #include "Movable.h"
 
 
-Movable::Movable()
+CMovable::CMovable()
 {
 }
 
 
-Movable::~Movable()
+CMovable::~CMovable()
 {
     Release();
 }
 
-void Movable::Initialize()
+void CMovable::Initialize()
 {
     m_tInfo.fX = WINCX*0.5f;
     m_tInfo.fY = WINCY*0.5f;
@@ -21,20 +21,22 @@ void Movable::Initialize()
     m_tInfo.fCY = BLOCK_CY;
 }
 
-void Movable::LateInit()
+void CMovable::LateInit()
 {
     CObj::UpdateRect();
 }
 
-int Movable::Update()
+int CMovable::Update()
 {
+    CObj::LateInit();
+
     KeyInput();
     Move();
 
     return NO_EVENT;
 }
 
-void Movable::LateUpdate()
+void CMovable::LateUpdate()
 {
     float fFriction = D_SPD*0.3f;
     
@@ -56,18 +58,18 @@ void Movable::LateUpdate()
 
 }
 
-void Movable::Render(HDC hDC)
+void CMovable::Render(HDC hDC)
 {
     CObj::UpdateRect();
 
     Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
-void Movable::Release()
+void CMovable::Release()
 {
 }
 
-void Movable::KeyInput()
+void CMovable::KeyInput()
 {
     if (GetAsyncKeyState(VK_UP) & 0x8000)
     {
@@ -87,7 +89,7 @@ void Movable::KeyInput()
     }
 }
 
-void Movable::Move()
+void CMovable::Move()
 {
     m_tInfo.fX += m_tInfo.fXSpd;
     m_tInfo.fY += m_tInfo.fYSpd;

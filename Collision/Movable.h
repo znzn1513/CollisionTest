@@ -1,11 +1,11 @@
 #pragma once
 #include "Obj.h"
-class Movable :
+class CMovable :
     public CObj
 {
 public:
-    Movable();
-    virtual ~Movable();
+    CMovable();
+    virtual ~CMovable();
 
 public:
     // CObj을(를) 통해 상속됨
@@ -18,5 +18,6 @@ public:
 
 protected:
     virtual void KeyInput();
+    virtual void Move();
 };
 

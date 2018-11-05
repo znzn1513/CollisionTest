@@ -24,6 +24,8 @@ void CBlock::LateInit()
 
 int CBlock::Update()
 {
+    CObj::LateInit();
+
     return NO_EVENT;
 }
 
@@ -33,6 +35,7 @@ void CBlock::LateUpdate()
 
 void CBlock::Render(HDC hDC)
 {
+    Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CBlock::Release()

@@ -11,5 +11,8 @@ public:
     void LateUpdate();
     void Render();
     void Release();
+
+private:
+    HDC m_hDC;
 };
 
