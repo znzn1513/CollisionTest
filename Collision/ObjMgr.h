@@ -13,6 +13,10 @@ public:
     enum OBJ_ID { PLAYER, BLOCK, OBJ_ID_END};
 
 public:
+    void PlayerBlockX();
+    void PlayerBlockY();
+
+public:
     void Initialize();
     void LateInit();
     void Update();

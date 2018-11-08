@@ -16,6 +16,14 @@ CObjMgr::~CObjMgr()
     Release();
 }
 
+void CObjMgr::PlayerBlockX()
+{
+}
+
+void CObjMgr::PlayerBlockY()
+{
+}
+
 void CObjMgr::Initialize()
 {
     int iNumTileX = int(WINCX / float(BLOCK_CX));
@@ -74,7 +82,7 @@ void CObjMgr::LateUpdate()
         for (auto& pObj : m_lstObj[i])
             pObj->LateUpdate();
 
-    CCollisionMgr::BasicCollision(m_lstObj[BLOCK], m_lstObj[PLAYER].front());
+    CCollisionMgr::AdvancedCollision(m_lstObj[BLOCK], m_lstObj[PLAYER].front());
 }
 
 void CObjMgr::Render(HDC hDC)

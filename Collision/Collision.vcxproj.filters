@@ -28,6 +28,9 @@
     <Filter Include="02.Mgr\01.CollisionMgr">
       <UniqueIdentifier>{076f49a9-a682-456c-bfc9-d3b9c5423422}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Mgr\02.MathMgr">
+      <UniqueIdentifier>{1d7f31d9-9b5b-4a23-957b-763c97d0992d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collision.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="CollisionMgr.h">
       <Filter>02.Mgr\01.CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="MathMgr.h">
+      <Filter>02.Mgr\02.MathMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Collision.cpp">
@@ -97,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>02.Mgr\01.CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="MathMgr.cpp">
+      <Filter>02.Mgr\02.MathMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

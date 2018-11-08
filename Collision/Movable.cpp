@@ -12,6 +12,16 @@ CMovable::~CMovable()
     Release();
 }
 
+void CMovable::BlockX()
+{
+    m_tInfo.fXSpd = 0;
+}
+
+void CMovable::BlockY()
+{
+    m_tInfo.fYSpd = 0;
+}
+
 void CMovable::Initialize()
 {
     m_tInfo.fX = WINCX*0.5f;

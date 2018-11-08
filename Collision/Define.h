@@ -12,6 +12,8 @@
 
 #define D_SPD 5
 
+#define PI 3.141592f
+
 
 //싱글톤 패턴 선언부
 #define DECLARE_SINGLETON(classname)        \

@@ -6,6 +6,9 @@ class CMovable :
 public:
     CMovable();
     virtual ~CMovable();
+public:
+    void BlockX();
+    void BlockY();
 
 public:
     // CObj을(를) 통해 상속됨
