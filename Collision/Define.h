@@ -10,7 +10,7 @@
 #define BLOCK_CX 50
 #define BLOCK_CY 50
 
-#define D_SPD 5
+#define D_SPD 50
 
 #define PI 3.141592f
 

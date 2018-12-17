@@ -41,13 +41,14 @@ int CMovable::Update()
     CObj::LateInit();
 
     KeyInput();
-    Move();
 
     return NO_EVENT;
 }
 
 void CMovable::LateUpdate()
 {
+    Move();
+
     float fFriction = D_SPD*0.3f;
     
     if (m_tInfo.fXSpd > 0)

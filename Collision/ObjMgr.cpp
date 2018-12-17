@@ -81,7 +81,6 @@ void CObjMgr::LateUpdate()
     for (int i = 0; i < OBJ_ID_END; ++i)
         for (auto& pObj : m_lstObj[i])
             pObj->LateUpdate();
-
     CCollisionMgr::AdvancedCollision(m_lstObj[BLOCK], m_lstObj[PLAYER].front());
 }
 

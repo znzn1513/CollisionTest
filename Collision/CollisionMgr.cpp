@@ -33,7 +33,7 @@ void CCollisionMgr::AdvancedCollision(list<CObj*>& pDst, CObj * pSrc)
         INFO tInfo{};
         if (CheckPenetrate(pBlock->GetInfo(), pSrc->GetInfo(), fMoveX, fMoveY, &tInfo))
         {
-            pSrc->SetPos(tInfo.fX, tInfo.fY);
+            //pSrc->SetPos(tInfo.fX, tInfo.fY);
             AdvancedPush(pBlock, pSrc, fMoveX, fMoveY);
             return;
         }
@@ -140,17 +140,17 @@ void CCollisionMgr::AdvancedPush(CObj * pBlock, CObj * pObj, const float & fMove
     if (tObj.fY > tBlock.fY)
         fYSign *= -1.f;
 
-/*    if (abs(fTX) > _HUGE_ENUF)
+    if (abs(fTX) > _HUGE_ENUF)
     {
-        pObj->SetPos(tObj.fX + tObj.fXSpd * fTY / fObjSpd, tObj.fY + tObj.fYSpd * fTY / fObjSpd);
+        pObj->SetPos(tObj.fX + fXSign * tObj.fXSpd * fTY / fObjSpd, tObj.fY + fYSign * tObj.fYSpd * fTY / fObjSpd);
         dynamic_cast<CMovable*>(pObj)->BlockY();
     }
     else if (abs(fTY) > _HUGE_ENUF)
     {
-        pObj->SetPos(tObj.fX + tObj.fXSpd * fTX / fObjSpd, tObj.fY + tObj.fYSpd * fTX / fObjSpd);
+        pObj->SetPos(tObj.fX + fXSign * tObj.fXSpd * fTX / fObjSpd, tObj.fY + fYSign * tObj.fYSpd * fTX / fObjSpd);
         dynamic_cast<CMovable*>(pObj)->BlockX();
     }
-    else*/ if (abs(fTX) < abs(fTY))
+    else if (fTX < fTY)
     {
         pObj->SetPos(tObj.fX + fXSign * tObj.fXSpd * fTX / fObjSpd, tObj.fY + fYSign * tObj.fYSpd * fTX / fObjSpd);
         dynamic_cast<CMovable*>(pObj)->BlockX();
